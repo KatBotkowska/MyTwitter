@@ -4,6 +4,7 @@ My twitter version - made in Django
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
+* [Sources](#sources)
 
 ## General info
 This project is a small version of Tweeter. Small app to send and get messages and post tweets with registration and login. 
