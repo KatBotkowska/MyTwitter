@@ -4,6 +4,7 @@ My twitter version - made in Django
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
+* [Features](#features)
 * [Sources](#sources)
 
 ## General info
@@ -22,7 +23,7 @@ Project is created with:
 ## Setup
 To run this project, pull it from git and open as a django project.
 
-##Features
+## Features
 * tweets -views of send tweets with possibility to add new tweet
 * messages - messages sent and get with possibility to add new tweet
 * registation and login - access to tweets and messages only for logged users
