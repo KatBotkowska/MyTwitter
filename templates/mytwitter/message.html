@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <title>Message</title>
+{% endblock %}
+{% block content %}
+    {{ block.super }}
+
+    <div>Message:
+
+        <div>
+            <p><strong>From: </strong>{{ message.from_user }}</p>
+            <p><strong>To: </strong>{{ message.to_user }}</p>
+            <p><strong>Content: </strong>{{ message.message_content }}</p>
+            <p><strong>Date: </strong>{{ message.date }}</p>
+            <p><strong>Status: </strong>{% if message.read %}Now read{% else %}Not read{% endif %}</p>
+        </div>
+    </div>
+    <p><a href="{% url 'mytwitter:add_message' %}">Add new message</a></p>
+
+{% endblock %}

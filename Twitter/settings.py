@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts.apps.AccountsConfig',
     'mytwitter',
 ]
 
@@ -57,7 +58,7 @@ ROOT_URLCONF = 'Twitter.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        'DIRS': [os.path.join(BASE_DIR, 'accounts/../templates')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -80,7 +81,7 @@ WSGI_APPLICATION = 'Twitter.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'tweets.sqlite3'),
     }
 }
 
@@ -117,6 +118,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+LOGIN_REDIRECT_URL = 'mytwitter:index'
+LOGOUT_REDIRECT_URL = 'mytwitter:index'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/

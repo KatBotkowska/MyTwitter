@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <title>Index</title>
+{% endblock %}
+{% block content %}
+    {{ block.super }}
+
+    <div><h2>Inside MyTwitter:</h2>
+
+        <h3>Messages sent</h3>
+        <table border="strong">
+            <thead>
+            <tr>
+                <th>Content</th>
+                <th>To</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>More</th>
+            </tr>
+            </thead>
+            <tbody>{% for message in messages_sent %}
+                <tr>
+                    <td>{{ message.message_content }}</td>
+                    <td>{{ message.to_user }}</td>
+                    <td>{{ message.date }}</td>
+                    <td>{% if message.read %}Read{% else %}Not read{% endif %}</td>
+                    <td><a href="{% url 'mytwitter:message' message.id %}"> Więcej...</a></td>
+                </tr>{% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <h3>Messages get</h3>
+        <table border="strong">
+            <thead>
+            <tr>
+                <th>Content</th>
+                <th>From</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>More</th>
+            </tr>
+            </thead>
+            <tbody>{% for message in messages_get %}
+                <tr>
+                    <td>{{ message.message_content }}</td>
+                    <td>{{ message.from_user }}</td>
+                    <td>{{ message.date }}</td>
+                    <td>{% if message.read %}Read{% else %}Not read{% endif %}</td>
+                    <td><a href="{% url 'mytwitter:message' message.id %}"> Więcej...</a></td>
+                </tr>{% endfor %}
+            </tbody>
+        </table>
+
+
+    </div>
+    <p><a href="{% url 'mytwitter:add_message' %}">Add new message</a></p>
+
+{% endblock %}

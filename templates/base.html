@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+        {% block style %}
+            {% comment %}
+        <link rel = 'stylesheet' href="style.css">
+        {% endcomment %}
+        {% endblock %}
+    {% endblock %}
+</head>
+<body>
+{% block header %}
+    <head>
+        <meta charset="utf-8">
+    </head>
+{% endblock %}
+{% block content %}
+    <h1>My Twitter - - - > connecting people</h1>
+    {% if user.is_authenticated %}
+        Hi {{ user.username }}!
+        <p><a href="{% url 'logout' %}">logout</a></p>
+    {% else %}
+        <p>You are not logged in</p>
+        <a href="{% url 'login' %}">login</a>
+    {% endif %}
+    <P><a href="{% url 'mytwitter:index' %}"><strong>MY TWEETS</strong></a></P>
+    <p><a href="{% url 'mytwitter:messages' %}"><strong>MY MESSAGES</strong></a></p>
+{% endblock %}
+{% block footer %}
+    <div>
+        Copyright 2020 by KateB
+    </div>
+{% endblock %}
+</body>
+</html>

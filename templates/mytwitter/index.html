@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <title>Index</title>
+{% endblock %}
+{% block content %}
+    {{ block.super }}
+    <h4>
+        My Twitter - connecting people
+    </h4>
+    <div>Inside MyTwitter :
+        <p>My tweets:</p>
+        <ul>
+            {% for tweet in tweets %}
+                <strong><a href="{% url 'mytwitter:tweet' tweet.id %}"> {{ tweet.slug }}</a></strong>
+                <li><p><strong>Content:</strong>{{ tweet.content }}</p></li>
+                <li><p><strong>Date:</strong>{{ tweet.creation_date }}</p></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <p><a href="{% url 'mytwitter:add_tweet' %}">Add new tweet</a></p>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <title>Tweet</title>
+{% endblock %}
+{% block content %}
+    {{ block.super }}
+    <div>Tweet:
+        <p><strong>{{ tweet.slug }}</strong></p>
+        <p><strong>Content:</strong>{{ tweet.content }}</p>
+        <p><strong>Date:</strong>{{ tweet.creation_date }}</p>
+    </div>
+    <p><a href="{% url 'mytwitter:add_tweet' %}">Add new tweet</a></p>
+
+{% endblock %}
