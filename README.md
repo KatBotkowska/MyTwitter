@@ -8,7 +8,7 @@ My twitter version - made in Django
 * [Sources](#sources)
 
 ## General info
-This project is a small version of Tweeter. Small app to send and get messages and post tweets with registration and login. 
+This project is a small version of Twitter. Small app to send and get messages and post tweets with registration and login. 
 Acces to tweets and messages only for logged users.
 	
 ## Technologies
